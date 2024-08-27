@@ -106,7 +106,22 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 ## 2. Metodologia
 
 ### Análise Exploratória
-...
+Inicialmente, foi realizada uma exploração com python para identificar as principais características dos dados das bases de origem. Foram extraídas as informações de estatística descritiva da tabela de `silver.upsell.cliente` utilizando a função.describe(), seguindo para a análise de missings para os campos dessa base de dados, para identificar possíveis pré-processamentos necessários.
+
+O proceso foi realizado também para a tabelas `silver.upsell.transacoes`. Na segunda tabela, além das estatísticas descritivas foram geradas alguns gráficos com a biblioteca matplotlib.
+
+<p align="center">
+  <img src="./images/transacoes_diadasemana.png" alt="Transações por dia da semana" width="450"/>
+  <img src="./images/transacoes_meses.png" alt="Transações por mês do ano" width="400"/>
+   <br>
+  <img src="./images/transacoes_horario.png" alt="Transações por hora do dia" width="600"/>
+</p>
+
+Além da análise dos dados brutos também foi construída uma matriz de retenção para entender o comportamento dos usuário do canal. Nela é possível acompanhar a taxa de retenção dos usuários a cada mês desde o mês com o primeiro acesso.
+
+<p align="center">
+  <img src="./images/matriz_retencao.png" alt="Matriz de retenção" width="600"/>
+</p>
 
 ### Descrição das técnicas utilizadas
 
