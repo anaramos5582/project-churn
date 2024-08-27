@@ -127,22 +127,43 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 ### Resultados obtidos
 - Desempenho do Modelo
 
-  O modelo alcançou uma acurácia de 79,29% nos dados de treino e 81,68% nos dados de teste, indicando uma leve melhora na capacidade do modelo de generalizar para novos dados. A acurácia, embora útil, não é a única métrica a ser considerada, especialmente em problemas de classificação desequilibrada.
-  A Área Sob a Curva (AUC) foi de 0.8355 no treino e 0.7997 no teste, o que sugere que o modelo tem uma boa habilidade para distinguir entre as classes positivas e negativas. O AUC próximo de 0.8 no teste confirma que o modelo tem um bom desempenho, embora com uma pequena queda em relação aos dados de treino, o que pode indicar um leve overfitting, mas ainda dentro de um limite aceitável.
+  O modelo de Random Forest apresentou um bom desempenho geral, conforme indicado pelas métricas de avaliação. A acurácia nos dados de treino foi de 85.40%, enquanto nos dados de teste foi de 80.92%, sugerindo que o modelo está generalizando bem, com uma pequena redução de desempenho ao ser aplicado em novos dados.
 
-- Interpretação das Métricas de Classificação
+- AUC (Área Sob a Curva ROC)
+  
+A AUC, que mede a capacidade do modelo de distinguir entre as classes, foi de 0.9318 no treino e 0.8427 no teste. Esses valores indicam um excelente desempenho nos dados de treino e um bom desempenho nos dados de teste, embora com uma ligeira diminuição na capacidade de discriminação em dados não vistos.
 
-  Conjunto de Treino:
+- Métricas de Classificação (Precision, Recall e F1-Score)
   
-    * Precision (0.80) e Recall (0.93) para a classe 1: O modelo é mais eficaz em identificar corretamente a classe 1 (classe majoritária), com alta capacidade de recuperar as instâncias dessa classe. A F1-Score de 0.86 indica um bom equilíbrio entre precision e recall para essa classe.
-    * Precision (0.77) e Recall (0.50) para a classe 0: A classe 0, por outro lado, tem uma precisão razoável, mas com recall baixo, o que sugere que muitas instâncias da classe 0 foram incorretamente classificadas como 1.
-    * Macro avg e Weighted avg refletem uma performance sólida, mas com uma variação perceptível entre as classes.
-      
-  Conjunto de Teste:
-  
-    * Precision (0.84) e Recall (0.92) para a classe 1: O desempenho na classe 1 se manteve forte, com um leve ajuste em comparação com os dados de treino, resultando em uma F1-Score de 0.88.
-    * Precision (0.75) e Recall (0.58) para a classe 0: A classe 0 ainda apresenta desafios, com um recall relativamente baixo, indicando que o modelo ainda tem dificuldade em capturar todas as instâncias da classe 0 corretamente.
-    * Macro avg e Weighted avg também indicam uma distribuição de desempenho consistente com o treino, mas com uma leve tendência de overfitting na classe majoritária.
+Métricas de Classificação (Precision, Recall e F1-Score)
+As métricas de precision, recall e f1-score fornecem uma visão mais detalhada sobre o desempenho do modelo para cada classe. Vamos analisar para as classes 0 e 1:
+
+ * Conjunto Dados de Treino
+   * Classe 0:
+      * Precision: 0.89
+      * Recall: 0.62
+      * F1-Score: 0.73
+   * Classe 1:
+     * Precision: 0.84
+     * Recall: 0.96
+     * F1-Score: 0.90
+       
+ Nos dados de treino, a classe 0 tem uma alta precisão (0.89), o que significa que, das previsões feitas para a classe 0, 89% estavam corretas. No entanto, o recall é relativamente baixo (0.62), indicando que o modelo não está capturando todas as instâncias da classe 0. A classe 1, por outro lado, tem um excelente desempenho em todas as métricas, com destaque para o recall de 0.96, mostrando que o modelo é muito eficaz em identificar as instâncias da classe 1.
+
+ * Conjunto Dados de Teste
+   * Classe 0
+      * Precision: 0.82
+      * Recall: 0.56
+      * F1-Score: 0.66
+   * Classe 1:
+      * Precision: 0.81
+      * Recall: 0.94
+      * F1-Score: 0.87
+        
+ Nos dados de teste, o desempenho para a classe 0 é inferior ao do treino, com um recall de apenas 0.56, o que indica que o modelo falha em identificar corretamente uma proporção significativa de instâncias da classe 0. A classe 1 mantém um bom desempenho, especialmente no recall (0.94), o que reforça a tendência observada nos dados de treino.
+
+ Em resumo, o modelo de Random Forest mostra um bom equilíbrio entre precisão e generalização, mas com uma tendência a identificar melhor a classe 1, o que pode sugerir a necessidade de ajustes adicionais de balanceamento dos dados para melhorar o desempenho em ambas as classes, especialmente na classe 0.
+
 
 ### Macro fluxo da solução
 
