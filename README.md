@@ -110,7 +110,15 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 
 ### Descrição das técnicas utilizadas
 
-...
+- Tipo: Análise Bidimensional (Correlação), Classificação.
+- Tipo de aprendizado: Supervisionado.
+  * Etapas do Pipeline:
+    * Pré-processamento: ColumnTransformer: Variáveis Númericas (SimpleImputer > StandardScaler); Variáveis Categóricas (SimpleImputer > OneHotEncoder).
+    * Seleção de variáveis: DropConstantFeatures, DropCorrelatedFeatures, SmartCorrelatedSelection (Random Forest), RFE (Logistic Regression).
+    * Seleção Parâmetros/Modelo: GridSearch (Logistic Regression).
+- Variável resposta: binária (flChurn).
+- Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
+
 ### Resultados obtidos
 
 ...
