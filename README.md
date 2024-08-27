@@ -115,11 +115,11 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
   * Etapas do Pipeline:
     * Pré-processamento: ColumnTransformer: Variáveis Númericas (SimpleImputer > StandardScaler); Variáveis Categóricas (SimpleImputer > OneHotEncoder).
     * Seleção de variáveis:
-      * DropConstantFeatures: remoção das features constantes ou quase constantes;
-      * DropCorrelatedFeatures;
-      * SmartCorrelatedSelection (Random Forest): existência de várias features altamente correlacionadas. Foi definido o critério de seleção "model_performance" (melhor desempenho do modelo) para a seleção otimizada das features a serem mantidas no modelo;
-      * RFE (Logistic Regression).
-    * Otimização de hiperparâmetros: GridSearch (Logistic Regression).
+      * DropConstantFeatures: remoção features constantes que não fornecem variação ou informação útil ao modelo, reduzindo o risco de overfitting e melhorando a eficiência do treinamento.
+      * DropCorrelatedFeatures: eliminação de features altamente correlacionadas, essa técnica previne a multicolinearidade, que pode distorcer os pesos atribuídos pelo modelo e afetar negativamente a interpretabilidade e a performance.
+      * SmartCorrelatedSelection (Random Forest): utilização a importância das features fornecida por um modelo de Random Forest para selecionar as mais relevantes entre as correlacionadas, garantindo que o modelo final utilize apenas as features que contribuem significativamente para a previsão.
+      * RFE (Logistic Regression): uso da Recursive Feature Elimination (RFE) para selecionar iterativamente as features mais importantes, removendo as menos relevantes em cada iteração com base em uma regressão logística, o que melhora a performance ao focar nas features que mais impactam o resultado.
+      * GridSearch (Logistic Regression): otimização dos hiperparâmetros da regressão logística, explorando várias combinações para encontrar a que oferece o melhor desempenho. Isso garante que o modelo seja ajustado de forma a maximizar sua precisão e generalização.
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
 
