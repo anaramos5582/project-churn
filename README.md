@@ -188,6 +188,7 @@ As métricas de precision, recall e f1-score fornecem uma visão mais detalhada 
 O modelo mostra um desempenho geral sólido, especialmente na classe majoritária (1), com boa generalização nos dados de teste. As métricas de AUC sugerem que o modelo tem uma boa habilidade discriminativa, embora o desempenho na classe minoritária (0) possa ser melhorado, possivelmente por meio de técnicas adicionais de balanceamento de classes ou ajustes na seleção de features. O uso de técnicas como GridSearch e RFE ajudou a refinar o modelo, embora o foco em melhorar a recall da classe minoritária poderia ser uma área de otimização futura.
 
 ### Roadmap de melhorias
+* Análise para tratamento de Outliers;
 * Plano de ação para coletar novos dados;
 * Acrescentar a feature mesRef quando a base de dados for mais abrangente (diferentes) anos. 
 * Aplicação de técnicas adicionais de balanceamento de classes;
