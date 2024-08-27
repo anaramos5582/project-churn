@@ -110,16 +110,15 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 
 ### Descrição das técnicas utilizadas
 
-- Tipo: Análise Bidimensional (Correlação de Spearman), Classificação. Considerando que as variáveis númericas seguem uma distribuição multimodal, foi utilizado o método de Spearman, para a análise das correlações entre as variáveis, por ser mais robusta e menos sensível a distribuições não normais e relações não lineares.
+- Tipo: Análise Bidimensional (Correlação de Spearman), Classificação (Random Forest). Considerando que as variáveis númericas seguem uma distribuição multimodal, foi utilizado o método de Spearman, para a análise das correlações entre as variáveis, por ser mais robusta e menos sensível a distribuições não normais e relações não lineares.
 - Tipo de aprendizado: Supervisionado.
   * Etapas do Pipeline:
     * Pré-processamento: ColumnTransformer: Variáveis Númericas (SimpleImputer > StandardScaler); Variáveis Categóricas (SimpleImputer > OneHotEncoder).
     * Seleção de variáveis:
       * DropConstantFeatures: remoção features constantes que não fornecem variação ou informação útil ao modelo, reduzindo o risco de overfitting e melhorando a eficiência do treinamento.
       * DropCorrelatedFeatures: eliminação de features altamente correlacionadas, essa técnica previne a multicolinearidade, que pode distorcer os pesos atribuídos pelo modelo e afetar negativamente a interpretabilidade e a performance.
-      * SmartCorrelatedSelection (Random Forest): utilização a importância das features fornecida por um modelo de Random Forest para selecionar as mais relevantes entre as correlacionadas, garantindo que o modelo final utilize apenas as features que contribuem significativamente para a previsão.
       * RFE (Logistic Regression): uso da Recursive Feature Elimination (RFE) para selecionar iterativamente as features mais importantes, removendo as menos relevantes em cada iteração com base em uma regressão logística, o que melhora a performance ao focar nas features que mais impactam o resultado.
-      * GridSearch (Logistic Regression): otimização dos hiperparâmetros da regressão logística, explorando várias combinações para encontrar a que oferece o melhor desempenho. Isso garante que o modelo seja ajustado de forma a maximizar sua precisão e generalização.
+      * GridSearch: otimização dos hiperparâmetros da Random Forest, explorando várias combinações para encontrar a que oferece o melhor desempenho, de modo que o modelo seja ajustado de forma a maximizar sua precisão e generalização.
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
 
@@ -169,4 +168,6 @@ O modelo mostra um desempenho geral sólido, especialmente na classe majoritári
 
 ### Roadmap de melhorias
 * Plano de ação para coletar novos dados;
+* Acrescentar a feature mesRef quando a base de dados for mais abrangente (diferentes) anos. 
+* Aplicação de técnicas adicionais de balanceamento de classes;
 * Segmentação de Usuários: segmentar os usuários com base em comportamento (frequência de interação, produtos adquiridos, etc.) para identificar grupos mais propensos a churn.
