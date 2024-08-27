@@ -119,6 +119,8 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
 
+![Pipeline do ML](https://github.com/anaramos5582/project-churn/blob/main/pipeline.png)
+
 ### Resultados obtidos
 
 ...
