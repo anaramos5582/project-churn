@@ -110,11 +110,15 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 
 ### Descrição das técnicas utilizadas
 
-- Tipo: Análise Bidimensional (Correlação), Classificação.
+- Tipo: Análise Bidimensional (Correlação de Spearman), Classificação. Considerando que as variáveis númericas seguem uma distribuição multimodal, foi utilizado o método de Spearman, para a análise das correlações entre as variáveis, por ser mais robusta e menos sensível a distribuições não normais e relações não lineares.
 - Tipo de aprendizado: Supervisionado.
   * Etapas do Pipeline:
     * Pré-processamento: ColumnTransformer: Variáveis Númericas (SimpleImputer > StandardScaler); Variáveis Categóricas (SimpleImputer > OneHotEncoder).
-    * Seleção de variáveis: DropConstantFeatures, DropCorrelatedFeatures, SmartCorrelatedSelection (Random Forest), RFE (Logistic Regression).
+    * Seleção de variáveis:
+      * DropConstantFeatures: remoção das features constantes ou quase constantes;
+      * DropCorrelatedFeatures;
+      * SmartCorrelatedSelection (Random Forest): existência de várias features altamente correlacionadas. Foi definido o critério de seleção "model_performance" (melhor desempenho do modelo) para a seleção otimizada das features a serem mantidas no modelo;
+      * RFE (Logistic Regression).
     * Seleção Parâmetros/Modelo: GridSearch (Logistic Regression).
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
@@ -122,8 +126,9 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 ![Pipeline do ML](https://github.com/anaramos5582/project-churn/blob/main/pipeline.png)
 
 ### Resultados obtidos
-
-...
+- Performance do modelo:
+- Importância das variáveis: 
+- Interpretação do modelo:
 
 ### Macro fluxo da solução
 
