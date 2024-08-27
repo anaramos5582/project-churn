@@ -150,7 +150,8 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 ...
 
 ### Planos de ação
-...
+* Envio por e-mail de notificações e lembretes personalizados sobre eventos ao vivo em horários diferentes, produtos disponíveis, mantendo os usuários informados e envolvidos.
+* Conduzir uma pesquisa de satisfação abrangente com perguntas qualitativas e abertas dos motivos para não retorno ao canal.
 
 ## 3. Conclusão
 
@@ -168,4 +169,4 @@ O modelo mostra um desempenho geral sólido, especialmente na classe majoritári
 
 ### Roadmap de melhorias
 * Plano de ação para coletar novos dados;
-* Criação de novas variáveis.
+* Segmentação de Usuários: segmentar os usuários com base em comportamento (frequência de interação, produtos adquiridos, etc.) para identificar grupos mais propensos a churn.
