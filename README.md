@@ -49,13 +49,12 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 |-----------------------------------|--------------------------|---------------------------|----------------------------------|-----------------------------------|
 | Transações no Sistema de Pontos   | 27/Jan/2024 a 23/Ago/2024 | 126.602                   | Databricks (transacoes)          | Téo Me Why                        |
 | Transações e Identificação do Produto | 27/Jan/2024 a 23/Ago/2024 | 126.958                   | Databricks (transacao_produto)   | Téo Me Why                        |
-| Clientes                          | 27/Jan/2024 a 23/Ago/2024 | 1772                      | Databricks (cliente)             | Téo Me Why                        |
+| Clientes                          | 27/Jan/2024 a 23/Ago/2024 | 1.772                      | Databricks (cliente)             | Téo Me Why                        |
 
 ## Descrição das Variáveis
 
 A tabela analítica resultado do estudo (ABT) utilizada com as respectivas informações são apresentadas na tabela abaixo:
 
-...
 
 ## Premissas e Limitações
 
