@@ -119,16 +119,31 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
       * DropCorrelatedFeatures;
       * SmartCorrelatedSelection (Random Forest): existência de várias features altamente correlacionadas. Foi definido o critério de seleção "model_performance" (melhor desempenho do modelo) para a seleção otimizada das features a serem mantidas no modelo;
       * RFE (Logistic Regression).
-    * Seleção Parâmetros/Modelo: GridSearch (Logistic Regression).
+    * Otimização de hiperparâmetros: GridSearch (Logistic Regression).
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
 
 ![Pipeline do ML](https://github.com/anaramos5582/project-churn/blob/main/pipeline.png)
 
 ### Resultados obtidos
-- Performance do modelo:
-- Importância das variáveis: 
-- Interpretação do modelo:
+- Desempenho do Modelo
+
+  O modelo alcançou uma acurácia de 79,29% nos dados de treino e 81,68% nos dados de teste, indicando uma leve melhora na capacidade do modelo de generalizar para novos dados. A acurácia, embora útil, não é a única métrica a ser considerada, especialmente em problemas de classificação desequilibrada.
+  A Área Sob a Curva (AUC) foi de 0.8355 no treino e 0.7997 no teste, o que sugere que o modelo tem uma boa habilidade para distinguir entre as classes positivas e negativas. O AUC próximo de 0.8 no teste confirma que o modelo tem um bom desempenho, embora com uma pequena queda em relação aos dados de treino, o que pode indicar um leve overfitting, mas ainda dentro de um limite aceitável.
+
+- Interpretação das Métricas de Classificação
+
+  Conjunto de Treino:
+  
+    * Precision (0.80) e Recall (0.93) para a classe 1: O modelo é mais eficaz em identificar corretamente a classe 1 (classe majoritária), com alta capacidade de recuperar as instâncias dessa classe. A F1-Score de 0.86 indica um bom equilíbrio entre precision e recall para essa classe.
+    * Precision (0.77) e Recall (0.50) para a classe 0: A classe 0, por outro lado, tem uma precisão razoável, mas com recall baixo, o que sugere que muitas instâncias da classe 0 foram incorretamente classificadas como 1.
+    * Macro avg e Weighted avg refletem uma performance sólida, mas com uma variação perceptível entre as classes.
+      
+  Conjunto de Teste:
+  
+    * Precision (0.84) e Recall (0.92) para a classe 1: O desempenho na classe 1 se manteve forte, com um leve ajuste em comparação com os dados de treino, resultando em uma F1-Score de 0.88.
+    * Precision (0.75) e Recall (0.58) para a classe 0: A classe 0 ainda apresenta desafios, com um recall relativamente baixo, indicando que o modelo ainda tem dificuldade em capturar todas as instâncias da classe 0 corretamente.
+    * Macro avg e Weighted avg também indicam uma distribuição de desempenho consistente com o treino, mas com uma leve tendência de overfitting na classe majoritária.
 
 ### Macro fluxo da solução
 
@@ -146,9 +161,10 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 * Ponto focal da disponibilização: Teo Me Why.
   
 ### Acompanhamento do modelo/estudo
-* Performance do Modelo: Curva ROC, acurácia e precisão no conjunto de treino;
+* Performance do Modelo: Curva ROC, acurácia, recall e precisão no conjunto de treino.
 * Taxa do target: no conjunto de treino, garantindo um fiel balanceamento dos dados.
-
+  
+O modelo mostra um desempenho geral sólido, especialmente na classe majoritária (1), com boa generalização nos dados de teste. As métricas de AUC sugerem que o modelo tem uma boa habilidade discriminativa, embora o desempenho na classe minoritária (0) possa ser melhorado, possivelmente por meio de técnicas adicionais de balanceamento de classes ou ajustes na seleção de features. O uso de técnicas como GridSearch e RFE ajudou a refinar o modelo, embora o foco em melhorar a recall da classe minoritária poderia ser uma área de otimização futura.
 
 ### Roadmap de melhorias
 * Plano de ação para coletar novos dados;
