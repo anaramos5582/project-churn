@@ -163,9 +163,6 @@ A AUC, que mede a capacidade do modelo de distinguir entre as classes, foi de 0.
 
 - Métricas de Classificação (Precision, Recall e F1-Score)
   
-Métricas de Classificação (Precision, Recall e F1-Score)
-As métricas de precision, recall e f1-score fornecem uma visão mais detalhada sobre o desempenho do modelo para cada classe. Vamos analisar para as classes 0 e 1:
-
  * Conjunto Dados de Treino
    * Classe 0:
       * Precision: 0.90
