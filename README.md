@@ -123,7 +123,7 @@ O proceso foi realizado também para a tabela `transacoes`. Na segunda tabela, a
 <p align="center">
   <img src="./images/transacoes_horario.png" alt="Transações por hora do dia" width="600"/>
 </p>
-<p>O pico de transações ocorre entre 12 e 13h. O maior volume de transações ocorre logo após a finalização das lives do Téo. Existem transações no período da noite, porém em um volume menor. Uma hipótese é que esse volume represente pessoas que trabalham durante o dia e assistem às gravações à noite.</p>
+<p>O pico de transações ocorre entre 12h e 13h. O maior volume de transações ocorre logo após a finalização das lives do Téo. Existem transações no período da noite, porém em um volume menor. Uma hipótese é que esse volume represente pessoas que trabalham durante o dia e assistem às gravações à noite.</p>
 
 
 Além da análise dos dados brutos também foi construída uma matriz de retenção para entender o comportamento dos usuário do canal. Nela é possível acompanhar a taxa de retenção dos usuários a cada mês desde o mês com o primeiro acesso.
@@ -154,11 +154,11 @@ Além da análise dos dados brutos também foi construída uma matriz de retenç
 ### Resultados obtidos
 - Desempenho do Modelo
 
-  O modelo de Random Forest apresentou um bom desempenho geral, conforme indicado pelas métricas de avaliação. A acurácia nos dados de treino foi de 85.40%, enquanto nos dados de teste foi de 80.92%, sugerindo que o modelo está generalizando bem, com uma pequena redução de desempenho ao ser aplicado em novos dados.
+  O modelo de Random Forest apresentou um bom desempenho geral, conforme indicado pelas métricas de avaliação. A acurácia nos dados de treino foi de 85.11%, enquanto nos dados de teste foi de 80.91%, sugerindo que o modelo está generalizando bem, com uma pequena redução de desempenho ao ser aplicado em novos dados.
 
 - AUC (Área Sob a Curva ROC)
   
-A AUC, que mede a capacidade do modelo de distinguir entre as classes, foi de 0.9318 no treino e 0.8427 no teste. Esses valores indicam um excelente desempenho nos dados de treino e um bom desempenho nos dados de teste, embora com uma ligeira diminuição na capacidade de discriminação em dados não vistos.
+A AUC, que mede a capacidade do modelo de distinguir entre as classes, foi de 0.9312 no treino e 0.8463 no teste. Esses valores indicam um excelente desempenho nos dados de treino e um bom desempenho nos dados de teste, embora com uma ligeira diminuição na capacidade de discriminação em dados não vistos.
 
 - Métricas de Classificação (Precision, Recall e F1-Score)
   
@@ -167,27 +167,25 @@ As métricas de precision, recall e f1-score fornecem uma visão mais detalhada 
 
  * Conjunto Dados de Treino
    * Classe 0:
-      * Precision: 0.89
-      * Recall: 0.62
+      * Precision: 0.90
+      * Recall: 0.61
       * F1-Score: 0.73
    * Classe 1:
      * Precision: 0.84
-     * Recall: 0.96
+     * Recall: 0.97
      * F1-Score: 0.90
-       
- Nos dados de treino, a classe 0 tem uma alta precisão (0.89), o que significa que, das previsões feitas para a classe 0, 89% estavam corretas. No entanto, o recall é relativamente baixo (0.62), indicando que o modelo não está capturando todas as instâncias da classe 0. A classe 1, por outro lado, tem um excelente desempenho em todas as métricas, com destaque para o recall de 0.96, mostrando que o modelo é muito eficaz em identificar as instâncias da classe 1.
 
  * Conjunto Dados de Teste
    * Classe 0
-      * Precision: 0.82
+      * Precision: 0.80
       * Recall: 0.56
       * F1-Score: 0.66
    * Classe 1:
       * Precision: 0.81
-      * Recall: 0.94
+      * Recall: 0.93
       * F1-Score: 0.87
         
- Nos dados de teste, o desempenho para a classe 0 é inferior ao do treino, com um recall de apenas 0.56, o que indica que o modelo falha em identificar corretamente uma proporção significativa de instâncias da classe 0. A classe 1 mantém um bom desempenho, especialmente no recall (0.94), o que reforça a tendência observada nos dados de treino.
+ Nos dados de teste, o desempenho para a classe 0 é inferior ao do treino, com um recall de apenas 0.56, o que indica que o modelo falha em identificar corretamente uma proporção significativa de instâncias da classe 0. A classe 1 mantém um bom desempenho, especialmente no recall (0.93), o que reforça a tendência observada nos dados de treino.
 
  Em resumo, o modelo de Random Forest mostra um bom equilíbrio entre precisão e generalização, mas com uma tendência a identificar melhor a classe 1, o que pode sugerir a necessidade de ajustes adicionais de balanceamento dos dados para melhorar o desempenho em ambas as classes, especialmente na classe 0.
 
