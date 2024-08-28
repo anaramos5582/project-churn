@@ -111,12 +111,12 @@ Inicialmente, foi realizada uma exploração com python para identificar as prin
 O proceso foi realizado também para a tabela `transacoes`. Na segunda tabela, além das estatísticas descritivas foram geradas alguns gráficos para análise.
 
 <p align="center">
-  <img src="./images/transacoes_diadasemana.png" alt="Transações por dia da semana" width="500"/>
+  <img src="./images/transacoes_diadasemana.png" alt="Transações por dia da semana" width="600"/>
 </p>
 <p>No primeiro gráfico, é possível identificar que a distribuição de transações nos dias da semana é aproximadamente uniforme e bem consistente para o período de segunda a sexta, com um aumento de transações na sexta-feira. Esse período coincide com os dias em que são realizadas lives no canal, e o baixo volume de transações nos finais de semana também coincide com os dias em que não são gerados novos conteúdos.</p>
 
 <p align="center">
-  <img src="./images/transacoes_meses.png" alt="Transações por mês do ano" width="500"/>
+  <img src="./images/transacoes_meses.png" alt="Transações por mês do ano" width="600"/>
 </p>
 <p>A distribuição das transações ao longo dos meses apresenta um volume baixo em janeiro, já que a base não contempla o período completo. Há uma crescente no número de transações entre fevereiro e abril, e uma queda gradual nos meses consecutivos até agosto.</p>
 
@@ -146,7 +146,10 @@ Além da análise dos dados brutos também foi construída uma matriz de retenç
 - Variável resposta: binária (flChurn).
 - Variáveis explicativas/features: variáveis originais (dtRef e idCliente) e engenhadas a partir dos dados presentes no datalake (descNomeProduto, nrPontosTransacao, dtTransacao(Time)).
 
-![Pipeline do ML](https://github.com/anaramos5582/project-churn/blob/main/pipeline.png)
+<p align="center">
+  <img src="./images/pipeline.png" alt="Pipeline do ML" width="370"/>
+</p>
+
 
 ### Resultados obtidos
 - Desempenho do Modelo
