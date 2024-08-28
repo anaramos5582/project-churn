@@ -106,16 +106,25 @@ As bases de dados utilizadas com as respectivas informações são apresentadas 
 ## 2. Metodologia
 
 ### Análise Exploratória
-Inicialmente, foi realizada uma exploração com python para identificar as principais características dos dados das bases de origem. Foram extraídas as informações de estatística descritiva da tabela de `silver.upsell.cliente` utilizando a função.describe(), seguindo para a análise de missings para os campos dessa base de dados, para identificar possíveis pré-processamentos necessários.
+Inicialmente, foi realizada uma exploração com python para identificar as principais características dos dados das bases de origem. Foram extraídas as informações de estatística descritiva da tabela de `cliente` , seguindo para a análise de missings para os campos dessa base de dados, para identificar possíveis pré-processamentos necessários. Durante o processamento não foram identificados tratamentos necessários para valores ausentes.
 
-O proceso foi realizado também para a tabelas `silver.upsell.transacoes`. Na segunda tabela, além das estatísticas descritivas foram geradas alguns gráficos com a biblioteca matplotlib.
+O proceso foi realizado também para a tabela `transacoes`. Na segunda tabela, além das estatísticas descritivas foram geradas alguns gráficos para análise.
 
 <p align="center">
-  <img src="./images/transacoes_diadasemana.png" alt="Transações por dia da semana" width="450"/>
-  <img src="./images/transacoes_meses.png" alt="Transações por mês do ano" width="400"/>
-   <br>
+  <img src="./images/transacoes_diadasemana.png" alt="Transações por dia da semana" width="500"/>
+</p>
+<p>No primeiro gráfico, é possível identificar que a distribuição de transações nos dias da semana é aproximadamente uniforme e bem consistente para o período de segunda a sexta, com um aumento de transações na sexta-feira. Esse período coincide com os dias em que são realizadas lives no canal, e o baixo volume de transações nos finais de semana também coincide com os dias em que não são gerados novos conteúdos.</p>
+
+<p align="center">
+  <img src="./images/transacoes_meses.png" alt="Transações por mês do ano" width="500"/>
+</p>
+<p>A distribuição das transações ao longo dos meses apresenta um volume baixo em janeiro, já que a base não contempla o período completo. Há uma crescente no número de transações entre fevereiro e abril, e uma queda gradual nos meses consecutivos até agosto.</p>
+
+<p align="center">
   <img src="./images/transacoes_horario.png" alt="Transações por hora do dia" width="600"/>
 </p>
+<p>O pico de transações ocorre entre 12 e 13h. O maior volume de transações ocorre logo após a finalização das lives do Téo. Existem transações no período da noite, porém em um volume menor. Uma hipótese é que esse volume represente pessoas que trabalham durante o dia e assistem às gravações à noite.</p>
+
 
 Além da análise dos dados brutos também foi construída uma matriz de retenção para entender o comportamento dos usuário do canal. Nela é possível acompanhar a taxa de retenção dos usuários a cada mês desde o mês com o primeiro acesso.
 
