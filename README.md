@@ -182,7 +182,9 @@ As métricas de precision, recall e f1-score fornecem uma visão mais detalhada 
 
 ### Macro fluxo da solução
 
-...
+<p align="center">
+  <img src="./images/macro_fluxo.jpg" alt="Macro fluxo" width="500"/>
+</p>
 
 ### Planos de ação
 * Envio por e-mail de notificações e lembretes personalizados sobre eventos ao vivo em horários diferentes, produtos disponíveis, mantendo os usuários informados e envolvidos.
