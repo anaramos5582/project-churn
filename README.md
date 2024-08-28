@@ -11,7 +11,8 @@ O churn é definido como abandono do canal após um período de 28 dias sem tran
 
 | Versão | Data | Responsáveis | Descrição |
 | ------ | ------ | ------ | ------ |
-| V1.0 | 26/08/2024 | Ana Paula Barros Ramos e Maria Fernanda O. Silvestre | Desenvolvimento do modelo de Churn de Usuários |
+| V1.0 | 26/08/2024 | Ana Paula Barros Ramos <a href="https://www.linkedin.com/in/ana-paula-barros-ramos" title="LinkedIn Ana Paula"><img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white" alt="LinkedIn Ana Paula"/></a> <br> Maria Fernanda O. Silvestre <a href="https://www.linkedin.com/in/maria-fernanda-o-silvestre" title="LinkedIn Maria Fernanda"><img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white" alt="LinkedIn Maria Fernanda"/></a> | Desenvolvimento do modelo de Churn de Usuários |
+
 
 ### Visão regulatória
 
