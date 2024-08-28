@@ -141,7 +141,7 @@ Além da análise dos dados brutos também foi construída uma matriz de retenç
     * Pré-processamento: ColumnTransformer: Variáveis Númericas (SimpleImputer > StandardScaler); Variáveis Categóricas (SimpleImputer > OneHotEncoder).
     * Seleção de variáveis:
       * DropConstantFeatures: remoção features constantes que não fornecem variação ou informação útil ao modelo, reduzindo o risco de overfitting e melhorando a eficiência do treinamento.
-      * DropCorrelatedFeatures: eliminação de features altamente correlacionadas, essa técnica previne a multicolinearidade, que pode distorcer os pesos atribuídos pelo modelo e afetar negativamente a interpretabilidade e a performance.
+      * DropCorrelatedFeatures: eliminação de features altamente correlacionadas, de modo a prevenir a multicolinearidade, que pode distorcer os pesos atribuídos pelo modelo e afetar negativamente a interpretabilidade e a performance.
       * RFE (Logistic Regression): uso da Recursive Feature Elimination (RFE) para selecionar iterativamente as features mais importantes, removendo as menos relevantes em cada iteração com base em uma regressão logística, o que melhora a performance ao focar nas features que mais impactam o resultado.
       * GridSearch: otimização dos hiperparâmetros da Random Forest, explorando várias combinações para encontrar a que oferece o melhor desempenho, de modo que o modelo seja ajustado de forma a maximizar sua precisão e generalização.
 - Variável resposta: binária (flChurn).
